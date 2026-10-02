@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": false,
+    "skipLibCheck": true,
+    "types": [
+      "bun-types"
+    ],
+    "noEmit": true,
+    "jsx": "preserve",
+    "jsxImportSource": "@opentui/solid"
+  },
+  "include": [
+    "index.ts",
+    "tui.tsx",
+    "mention-overlay.tsx",
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ]
+}

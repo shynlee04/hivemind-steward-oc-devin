@@ -1,0 +1,33 @@
+# Paths stripped from the public sync. The dev repo keeps these tracked;
+# the public repo is git-archive HEAD minus every path listed here.
+# scripts/sync-public.sh applies this file — add a path, rerun, done.
+#
+# Public keeps the red-green surface only: unit tests, support, fake-acp.
+# Captured sessions (test/fixtures/) never ship — real captures contain real
+# session prose, screenshots, and machine/account identifiers that no token
+# scrub can fully remove; scripted fake-acp scenarios carry the public suite.
+# Journeys need the private verify-opencode-runtime harness; probes/captures/
+# e2e need a live account; fixture-coupled tests are dev-only.
+.devin/
+.planning/
+.audit/
+AGENTS.md
+opencode.json
+verify-journeys/
+test/e2e/
+test/fixtures/
+test/acp.smoke.ts
+test/capture-permission.ts
+test/capture-transcript.ts
+test/fixture-replay.test.ts
+test/devin-real-replay.test.ts
+test/devin-replay-stability.test.ts
+test/grouping.test.ts
+test/lane-rich.test.ts
+test/probe-capabilities.ts
+test/probe-dump-replay.ts
+test/probe-live-lock.ts
+test/probe-load-volume.ts
+test/probe-locked-load.ts
+scripts/private-scrub-rules.txt
+.github/workflows/publish-public.yml

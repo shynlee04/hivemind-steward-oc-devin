@@ -1,0 +1,21 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bunx tsgo --noEmit
+      - run: bun test
+      - name: public export is leak-free
+        run: |
+          scripts/sync-public.sh "$RUNNER_TEMP/public-tree"
+          python3 scripts/sanitize-fixtures.py --check "$RUNNER_TEMP/public-tree"
+      - run: npm pack --dry-run

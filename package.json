@@ -1,0 +1,76 @@
+{
+  "name": "hivemind-steward-oc-devin",
+  "version": "0.0.1",
+  "description": "OpenCode V2 plugin hosting Devin ACP sessions natively inside the OpenCode TUI: live streaming, tool cards, permissions, model/mode pickers, session continuity, and agent-delegation tools.",
+  "type": "module",
+  "main": "index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./server": "./index.ts",
+    "./tui": "./tui.tsx",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.ts",
+    "tui.tsx",
+    "session-picker.tsx",
+    "mention-overlay.tsx",
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "typecheck": "tsgo --noEmit",
+    "test": "bun test",
+    "prepack": "bun run typecheck"
+  },
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "devin",
+    "acp",
+    "tui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shynlee04/hivemind-steward-oc-devin.git"
+  },
+  "author": "shynlee04",
+  "homepage": "https://github.com/shynlee04/hivemind-steward-oc-devin#readme",
+  "bugs": {
+    "url": "https://github.com/shynlee04/hivemind-steward-oc-devin/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.3.1"
+  },
+  "peerDependencies": {
+    "@opencode/plugin": ">=2.0.0 <3",
+    "@opencode/theme": ">=2.0.20 <3",
+    "@opentui/core": ">=0.5.14",
+    "@opentui/solid": ">=0.5.14",
+    "solid-js": ">=1.9.0"
+  },
+  "devDependencies": {
+    "@opencode/plugin": "2.0.21",
+    "@opencode/theme": "2.0.20",
+    "@opentui/core": "0.5.14",
+    "@opentui/solid": "0.5.14",
+    "@typescript/native-preview": "7.0.0-dev.20260707.2",
+    "bun-types": "1.4.2",
+    "solid-js": "1.9.15"
+  },
+  "license": "MIT",
+  "overrides": {
+    "@opencode/theme": {
+      "@opentui/core": "0.5.14"
+    }
+  },
+  "bin": {
+    "hivemind-steward-oc-devin": "bin/hivemind-steward-oc-devin.mjs"
+  }
+}
